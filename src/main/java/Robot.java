@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class Robot implements RobotInterface {
@@ -8,16 +11,61 @@ public class Robot implements RobotInterface {
     private direction pointing;
     private enum direction {East, West, North, South}
     private enum state {Up, Down}
+    private boolean isInitialized;
 
-    public Robot (int size){
-        // TODO Check for valid size
-        grid = new int[size][size];
+    public Robot (){
+        grid = new int[1][1];
         pen = state.Up;
         position = new int[2];
-        position[0] = size - 1;
         pointing = direction.North;
+        isInitialized = false;
     }
 
+    public void  initialize(int size){
+        // TODO Check for valid size
+        this.grid = new int[size][size];
+        this.position[0] = size - 1;
+        this.isInitialized = true;
+    }
+     public boolean  readCommand(String command){
+        //TODO conditions
+        String[] detailedCommand = command.split("");
+        switch (detailedCommand[0]){
+            case "P", "p" -> this.printGrid();
+            case "Q", "q" -> {return false;}
+            case "U", "u" -> this.setPenUp();
+            case "D", "d" -> this.setPenDown();
+            case "R", "r" -> this.turnRight();
+            case "L", "l" -> this.turnLeft();
+            case "C", "c" -> this.printRobot();
+            case "I", "i" -> this.initialize(Integer.parseInt(detailedCommand[detailedCommand.length-1]));
+            case "M", "m" -> this.moverRobot((Integer.parseInt(detailedCommand[detailedCommand.length-1])));
+        }
+    return true;
+    }
+
+    public boolean moverRobot(int steps){
+        // TODO conditions
+        if (this.getPen() == state.Down) {
+            for (int i = 0; i <=steps; i++) {
+                switch (this.pointing) {
+                    case East -> grid[this.position[0]][this.position[1] + i] = 1;
+                    case North -> grid[this.position[0] - i][this.position[1]] = 1;
+                    case West -> grid[this.position[0]][this.position[1] - i] = 1;
+                    case South -> grid[this.position[0] + i][this.position[1]] = 1;
+                }
+            }
+
+        }
+        switch (this.pointing) {
+            case South -> this.position[0] += steps;
+            case West -> this.position[1] -= steps;
+            case North -> this.position[0] -= steps;
+            case East -> this.position[1] += steps;
+        }
+        return true;
+
+    }
     public void printRobot(){
         int size = this.grid.length;
         System.out.println("Position: "
@@ -50,16 +98,39 @@ public class Robot implements RobotInterface {
         System.out.println(LastLine);
     }
     public static void main(String[] args){
-    Robot robot = new Robot(9);
-    robot.grid[0][0] = 1;
-    robot.grid[1][1] = 1;
-    robot.grid[2][2] = 1;
-    robot.grid[3][3] = 1;
-    robot.grid[4][4] = 1;
-    robot.grid[4][0] = 1;
-    robot.grid[0][4] = 1;
+        BufferedReader inFromConsole = new BufferedReader(new InputStreamReader(System.in));
+   /* Robot robot = new Robot(9);
+    robot.printGrid();
+    robot.setPenDown();
+    robot.printRobot();
+    robot.moverRobot(5);
+    robot.printGrid();
+    robot.turnRight();
+    robot.printRobot();
+    robot.moverRobot(5);
+    robot.printGrid();
+    robot.turnRight();
+    robot.printRobot();
+    robot.moverRobot(5);
+    robot.printGrid();
+    robot.turnRight();
+    robot.printRobot();
+    robot.moverRobot(5);
     robot.printGrid();
     robot.printRobot();
+    */
+    Robot testRobot = new Robot();
+    boolean run = true;
+    String input="";
+    while (run){
+        System.out.print("Enter command :");
+        try {
+            input = inFromConsole.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        run = testRobot.readCommand(input);
+    }
     }
     public int[] getPosition() {
         return position;
