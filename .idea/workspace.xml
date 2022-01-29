@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4281457c-98e8-4d99-a4e9-c2ae21f1e63a" name="Changes" comment="">
+    <list default="true" id="4281457c-98e8-4d99-a4e9-c2ae21f1e63a" name="Changes" comment="&#10;Code implementation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Robot.java" afterDir="false" />
     </list>
@@ -80,6 +80,14 @@
       <option name="presentableId" value="Default" />
       <updated>1643080419510</updated>
     </task>
+    <task id="LOCAL-00001" summary="&#10;Code implementation">
+      <created>1643311748899</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1643311748899</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,5 +101,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&#10;Code implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;Code implementation" />
   </component>
 </project>

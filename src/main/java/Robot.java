@@ -21,11 +21,13 @@ public class Robot implements RobotInterface {
         isInitialized = false;
     }
 
-    public void  initialize(int size){
-        // TODO Check for valid size
+    public boolean initializeGrid(int size){
+        if (size <= 0)
+            return false;
         this.grid = new int[size][size];
         this.position[0] = size - 1;
         this.isInitialized = true;
+        return true;
     }
      public boolean  readCommand(String command){
         //TODO conditions
@@ -38,14 +40,39 @@ public class Robot implements RobotInterface {
             case "R", "r" -> this.turnRight();
             case "L", "l" -> this.turnLeft();
             case "C", "c" -> this.printRobot();
-            case "I", "i" -> this.initialize(Integer.parseInt(detailedCommand[detailedCommand.length-1]));
-            case "M", "m" -> this.moverRobot((Integer.parseInt(detailedCommand[detailedCommand.length-1])));
+            case "I", "i" -> {
+                if(!this.initializeGrid(Integer.parseInt(detailedCommand[detailedCommand.length-1])))
+                    System.out.println("Invalid Size! Make sure the size is greater than zero");
+            }
+            case "M", "m" -> {
+                if(!this.moverRobot((Integer.parseInt(detailedCommand[detailedCommand.length-1]))))
+                    System.out.println("Invalid move! Make sure the move is within the grid");
+            }
         }
     return true;
     }
 
     public boolean moverRobot(int steps){
-        // TODO conditions
+        if (steps <= 0)
+            return false;
+        switch (this.pointing) {
+            case South -> {
+               if(this.position[0] + steps >= this.grid.length)
+                   return false;
+            }
+            case West -> {
+               if(this.position[1] - steps < 0)
+                   return false;
+            }
+            case North -> {
+                if(this.position[0] - steps < 0)
+                    return false;
+            }
+            case East -> {
+                if(this.position[1] + steps >= this.grid.length)
+                    return false;
+            }
+        }
         if (this.getPen() == state.Down) {
             for (int i = 0; i <=steps; i++) {
                 switch (this.pointing) {
