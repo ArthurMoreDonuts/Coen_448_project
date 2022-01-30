@@ -32,6 +32,7 @@ public class Robot implements RobotInterface {
      public boolean  readCommand(String command){
         //TODO conditions
         String[] detailedCommand = command.split("");
+        //int InputValue = Integer.parseInt(command.substring(1).strip());
         switch (detailedCommand[0]){
             case "P", "p" -> this.printGrid();
             case "Q", "q" -> {return false;}
@@ -41,18 +42,18 @@ public class Robot implements RobotInterface {
             case "L", "l" -> this.turnLeft();
             case "C", "c" -> this.printRobot();
             case "I", "i" -> {
-                if(!this.initializeGrid(Integer.parseInt(detailedCommand[detailedCommand.length-1])))
+                if(!this.initializeGrid(Integer.parseInt(command.substring(1).strip())))
                     System.out.println("Invalid Size! Make sure the size is greater than zero");
             }
             case "M", "m" -> {
-                if(!this.moverRobot((Integer.parseInt(detailedCommand[detailedCommand.length-1]))))
+                if(!this.moveRobot(Integer.parseInt(command.substring(1).strip())))
                     System.out.println("Invalid move! Make sure the move is within the grid");
             }
         }
     return true;
     }
 
-    public boolean moverRobot(int steps){
+    public boolean moveRobot(int steps){
         if (steps <= 0)
             return false;
         switch (this.pointing) {

@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4281457c-98e8-4d99-a4e9-c2ae21f1e63a" name="Changes" comment="&#10;Code implementation">
+    <list default="true" id="4281457c-98e8-4d99-a4e9-c2ae21f1e63a" name="Changes" comment="Added few conditions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/RobotTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643311748899</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added few conditions">
+      <created>1643436869394</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1643436869394</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -104,6 +112,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&#10;Code implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;Code implementation" />
+    <MESSAGE value="Added few conditions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added few conditions" />
   </component>
 </project>
