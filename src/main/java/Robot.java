@@ -50,6 +50,17 @@ public class Robot implements RobotInterface {
                 case "R", "r" -> this.turnRight();
                 case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this.printRobot();
+                case "H", "h" -> {
+                    System.out.println("Type \"I\" or \"i\" followed by a positive integer greater than 1 to initialize the grid");
+                    System.out.println("Type \"P\" or \"p\" to print the grid, but make sure the grid is already initialized");
+                    System.out.println("Type \"M\" or \"m\" followed by positive integer greater than zero to move the robot in the direction its facing, but make sure the grid is already initialized");
+                    System.out.println("Type \"R\" or \"r\" to turn the robot right");
+                    System.out.println("Type \"L\" or \"l\" to turn the robot left");
+                    System.out.println("Type \"U\" or \"u\" to lift the robot's pen up");
+                    System.out.println("Type \"D\" or \"d\" to lower the robot's pen down");
+                    System.out.println("Type \"C\" or \"c\" to print the robot details");
+                    System.out.println("Type \"Q\" or \"q\" to quit the program");
+                }
                 default -> System.out.println("Invalid command, press h or H for help!");
             }
         }
@@ -154,39 +165,28 @@ public class Robot implements RobotInterface {
         System.out.println(LastLine);
     }
     public static void main(String[] args){
+        System.out.println("# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #");
+        System.out.println("#  *       **       *   *****   *       *****   *****   **       **   *****   #");
+        System.out.println("#   *     *  *     *    *       *       *       *   *   * *     * *   *       #");
+        System.out.println("#    *   *    *   *     ****    *       *       *   *   *  *   *  *   ****    #");
+        System.out.println("#     * *      * *      *       *       *       *   *   *   * *   *   *       #");
+        System.out.println("#      *        *       *****   *****   *****   *****   *    *    *   *****   #");
+        System.out.println("# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #");
+
+
         BufferedReader inFromConsole = new BufferedReader(new InputStreamReader(System.in));
-   /* Robot robot = new Robot(9);
-    robot.printGrid();
-    robot.setPenDown();
-    robot.printRobot();
-    robot.moverRobot(5);
-    robot.printGrid();
-    robot.turnRight();
-    robot.printRobot();
-    robot.moverRobot(5);
-    robot.printGrid();
-    robot.turnRight();
-    robot.printRobot();
-    robot.moverRobot(5);
-    robot.printGrid();
-    robot.turnRight();
-    robot.printRobot();
-    robot.moverRobot(5);
-    robot.printGrid();
-    robot.printRobot();
-    */
-    Robot testRobot = new Robot();
-    boolean run = true;
-    String input="";
-    while (run){
-        System.out.print("Enter command :");
-        try {
-            input = inFromConsole.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Robot testRobot = new Robot();
+        boolean run = true;
+        String input="";
+        while (run){
+            System.out.print("Enter command :");
+            try {
+                input = inFromConsole.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         run = testRobot.readCommand(input);
-    }
+        }
     }
     public int[] getPosition() {
         return position;
