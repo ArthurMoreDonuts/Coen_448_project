@@ -22,7 +22,7 @@ public class Robot implements RobotInterface {
     }
 
     public boolean initializeGrid(int size){
-        if (size <= 0)
+        if (size <= 1)
             return false;
         this.grid = new int[size][size];
         this.position[0] = size - 1;
@@ -30,25 +30,53 @@ public class Robot implements RobotInterface {
         return true;
     }
      public boolean  readCommand(String command){
-        //TODO conditions
-        String[] detailedCommand = command.split("");
-        //int InputValue = Integer.parseInt(command.substring(1).strip());
-        switch (detailedCommand[0]){
-            case "P", "p" -> this.printGrid();
-            case "Q", "q" -> {return false;}
-            case "U", "u" -> this.setPenUp();
-            case "D", "d" -> this.setPenDown();
-            case "R", "r" -> this.turnRight();
-            case "L", "l" -> this.turnLeft();
-            case "C", "c" -> this.printRobot();
-            case "I", "i" -> {
-                if(!this.initializeGrid(Integer.parseInt(command.substring(1).strip())))
-                    System.out.println("Invalid Size! Make sure the size is greater than zero");
+        int InputValue;
+        command = command.strip();//remove whitespace
+        if (command.length() == 0)
+            System.out.println("Please enter a command, press h or H for help!");
+        else if (command.length() == 1){
+            switch (command.substring(0,1)){
+                case "P", "p" -> {
+                    if (isInitialized) {
+                        this.printGrid();
+                    }
+                    else{
+                        System.out.println("Initialize the grid first, please!");
+                    }
+                }
+                case "Q", "q" -> {return false;}
+                case "U", "u" -> this.setPenUp();
+                case "D", "d" -> this.setPenDown();
+                case "R", "r" -> this.turnRight();
+                case "L", "l" -> this.turnLeft();
+                case "C", "c" -> this.printRobot();
+                default -> System.out.println("Invalid command, press h or H for help!");
             }
-            case "M", "m" -> {
-                if(!this.moveRobot(Integer.parseInt(command.substring(1).strip())))
-                    System.out.println("Invalid move! Make sure the move is within the grid");
+        }
+        else {
+            if (command.substring(1).matches("[0-9]+")) {
+                InputValue = Integer.parseInt(command.substring(1));
+                switch (command.substring(0,1)) {
+                    case "I", "i" -> {
+                        if (!this.initializeGrid(InputValue))
+                            System.out.println("Invalid Size! Make sure the size is greater than 1");
+                    }
+                    case "M", "m" -> {
+                        if (isInitialized) {
+                            if (!this.moveRobot(InputValue))
+                                System.out.println("Invalid move! Make sure the move is within the grid");
+                        }
+                        else{
+                            System.out.println("Initialize the grid first, please!");
+                        }
+                    }
+                    default -> System.out.println("Invalid command, press h or H for help!");
+                }
+            }else {
+                System.out.println("Invalid command, press h or H for help!");
             }
+
+
         }
     return true;
     }
