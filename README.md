@@ -13,8 +13,6 @@ Ahmed Dawoud
 
 # Mapping Requirements to Unit Test
 
-[Table](https://www.notion.so/7705c05430d341cc99d35589a46cce4f)
+[Table](https://helix-bowler-f5a.notion.site/Mapping-Requirements-to-Unit-Test-ea1f3a7346b34fabb5e7f4444ef4d92c)
 
-## Console: Tests Passed
 
-![Untitled](Mapping%20Requirements%20to%20Unit%20Test%20cf49a90cafed42509cd4d45a1be4c991/Untitled.png)
