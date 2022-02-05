@@ -26,6 +26,9 @@ public class Robot implements RobotInterface {
             return false;
         this.grid = new int[size][size];
         this.position[0] = size - 1;
+        this.position[1]  = 0;
+        this.pen = state.Up;
+        this.pointing = direction.North;
         this.isInitialized = true;
         return true;
     }
@@ -122,7 +125,6 @@ public class Robot implements RobotInterface {
                     case South -> grid[this.position[0] + i][this.position[1]] = 1;
                 }
             }
-
         }
         switch (this.pointing) {
             case South -> this.position[0] += steps;
@@ -136,8 +138,8 @@ public class Robot implements RobotInterface {
     public void printRobot(){
         int size = this.grid.length;
         System.out.println("Position: "
-                + Math.abs(this.position[0] -size+1) +", "
-                + this.position[1]
+                +  this.position[1]+", "
+                + Math.abs(this.position[0] -size+1)
                 + " – Pen: " + this.getPen()
                 + " - Facing: " + this.getPointing());
     }
@@ -145,11 +147,21 @@ public class Robot implements RobotInterface {
     public void printGrid(){
 
         int size = this.grid.length;
-        String LastLine ="  ";
-
+        String LastLine =" ";
+        if ( Math.abs(size+1)<10)
+            LastLine = "  ";
+        else if ( Math.abs(size+1)<100)
+            LastLine = "    ";
+        else if ( Math.abs(size+1)>=100)
+            LastLine = "    ";
+        String SpaceBetweenIndexAndBoard = " ";
         for (int row = 0; row < size; row ++){
 
-            String Line="" + Math.abs(row-size+1)+ " ";
+            if ( Math.abs(row-size+1)<10)
+                SpaceBetweenIndexAndBoard = "   ";
+            else if ( Math.abs(row-size+1)<100)
+                SpaceBetweenIndexAndBoard = "  ";
+            String Line="" + Math.abs(row-size+1)+ SpaceBetweenIndexAndBoard;
             LastLine += row + " ";
 
             for (int column = 0; column < size; column ++){
