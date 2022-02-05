@@ -275,11 +275,11 @@ class RobotTest {
         robot.turnRight();
         assertTrue(robot.moveRobot(2));
         robot.printGrid();
-        assertEquals("3         " + System.lineSeparator() +
-                "2 * * *   " + System.lineSeparator() +
-                "1 *   *   " + System.lineSeparator() +
-                "0 * * *   " + System.lineSeparator() +
-                "  0 1 2 3 " + System.lineSeparator(), outContent.toString());
+        assertEquals("3           " + System.lineSeparator() +
+                             "2   * * *   " + System.lineSeparator() +
+                             "1   *   *   " + System.lineSeparator() +
+                             "0   * * *   " + System.lineSeparator() +
+                             "    0 1 2 3 " + System.lineSeparator(), outContent.toString());
     }
 
     @Test
@@ -301,11 +301,11 @@ class RobotTest {
         robot = new Robot();
         robot.initializeGrid(4);
         assertTrue(robot.readCommand("P"));
-        assertEquals("3         " + System.lineSeparator() +
-                "2         " + System.lineSeparator() +
-                "1         " + System.lineSeparator() +
-                "0         " + System.lineSeparator() +
-                "  0 1 2 3 " + System.lineSeparator(), outContent.toString());
+        assertEquals("3           " + System.lineSeparator() +
+                "2           " + System.lineSeparator() +
+                "1           " + System.lineSeparator() +
+                "0           " + System.lineSeparator() +
+                "    0 1 2 3 " + System.lineSeparator(), outContent.toString());
     }
 
     @Test

@@ -147,13 +147,7 @@ public class Robot implements RobotInterface {
     public void printGrid(){
 
         int size = this.grid.length;
-        String LastLine =" ";
-        if ( Math.abs(size+1)<10)
-            LastLine = "  ";
-        else if ( Math.abs(size+1)<100)
-            LastLine = "    ";
-        else if ( Math.abs(size+1)>=100)
-            LastLine = "    ";
+        String LastLine ="    ";
         String SpaceBetweenIndexAndBoard = " ";
         String HorizontalSpaceBetweenStars = " ";
         for (int row = 0; row < size; row ++){
