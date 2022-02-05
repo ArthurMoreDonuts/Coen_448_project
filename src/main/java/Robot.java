@@ -155,6 +155,7 @@ public class Robot implements RobotInterface {
         else if ( Math.abs(size+1)>=100)
             LastLine = "    ";
         String SpaceBetweenIndexAndBoard = " ";
+        String HorizontalSpaceBetweenStars = " ";
         for (int row = 0; row < size; row ++){
 
             if ( Math.abs(row-size+1)<10)
@@ -165,10 +166,16 @@ public class Robot implements RobotInterface {
             LastLine += row + " ";
 
             for (int column = 0; column < size; column ++){
-                if (grid[row][column] == 0)
-                    Line += "  ";
+                if ( column <10)
+                    HorizontalSpaceBetweenStars = " ";
+                else if ( column<100)
+                    HorizontalSpaceBetweenStars = "  ";
                 else
-                    Line += "* ";
+                    HorizontalSpaceBetweenStars = "   ";
+                if (grid[row][column] == 0)
+                    Line += " " + HorizontalSpaceBetweenStars;
+                else
+                    Line += "*" + HorizontalSpaceBetweenStars;
             }
 
             System.out.println(Line);

@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4281457c-98e8-4d99-a4e9-c2ae21f1e63a" name="Changes" comment="Finished development">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4281457c-98e8-4d99-a4e9-c2ae21f1e63a" name="Changes" comment="Verification">
       <change beforePath="$PROJECT_DIR$/src/main/java/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RobotInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RobotInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643720474149</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Verification">
+      <created>1644039164596</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1644039164596</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -139,7 +144,8 @@
     <MESSAGE value="&#10;Code implementation" />
     <MESSAGE value="Added few conditions" />
     <MESSAGE value="Finished development" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished development" />
+    <MESSAGE value="Verification" />
+    <option name="LAST_COMMIT_MESSAGE" value="Verification" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Coen_448_project$RobotTest.ic" NAME="RobotTest Coverage Results" MODIFIED="1644015811521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
