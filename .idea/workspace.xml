@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4281457c-98e8-4d99-a4e9-c2ae21f1e63a" name="Changes" comment="Verification">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/RobotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RobotTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +16,13 @@
   <component name="ExportToHTMLSettings">
     <option name="OPEN_IN_BROWSER" value="true" />
     <option name="OUTPUT_DIRECTORY" value="C:\Users\ahmed\IdeaProjects\Coen_448_project" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,6 +35,13 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="usePluginRegistry" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="24AjjI9XiqOklVqfKt0KtmQ3IAE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -40,6 +53,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RunManager" selected="JUnit.RobotTest">
     <configuration name="Robot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -49,21 +63,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RobotTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Solution" />
       <module name="448" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RobotTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RobotTest.printGrid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RobotTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="448" />
+      <extension name="coverage" runner="jacoco" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="RobotTest" />
-      <option name="METHOD_NAME" value="printGrid" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -88,13 +101,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Robot" />
+      <item itemvalue="Application.Solution" />
+      <item itemvalue="JUnit.RobotTest" />
+      <item itemvalue="JUnit.RobotTest.printGridTest" />
+      <item itemvalue="JUnit.RobotTest.readCommandPTest" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.RobotTest" />
+        <item itemvalue="Application.Solution" />
         <item itemvalue="JUnit.RobotTest.readCommandPTest" />
         <item itemvalue="JUnit.RobotTest.printGridTest" />
         <item itemvalue="Application.Robot" />
-        <item itemvalue="JUnit.RobotTest.printGrid" />
       </list>
     </recent_temporary>
   </component>
@@ -156,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644039980752</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Verification">
+      <created>1644061390428</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1644061390428</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,6 +206,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="Verification" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Coen_448_project$RobotTest.ic" NAME="RobotTest Coverage Results" MODIFIED="1644015811521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Coen_448_project$RobotTest.exec" NAME="RobotTest Coverage Results" MODIFIED="1644963872697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Coen_448_project$RobotTest.ic" NAME="RobotTest Coverage Results" MODIFIED="1644962203719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>*</FILTER>
+    </SUITE>
   </component>
 </project>
