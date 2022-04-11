@@ -320,7 +320,7 @@ class RobotTest {
     void readCommandHTest() {
         robot = new Robot();
         robot.initializeGrid(4);
-        assertTrue(robot.readCommand("H"));
+        assertTrue(robot.readCommand("F"));
         assertEquals("Type \"I\" or \"i\" followed by a positive integer greater than 1 to initialize the grid" + System.lineSeparator() +
                 "Type \"P\" or \"p\" to print the grid, but make sure the grid is already initialized" + System.lineSeparator() +
                 "Type \"M\" or \"m\" followed by positive integer greater than zero to move the robot in the direction its facing, but make sure the grid is already initialized" + System.lineSeparator() +
@@ -329,7 +329,8 @@ class RobotTest {
                 "Type \"U\" or \"u\" to lift the robot's pen up" + System.lineSeparator() +
                 "Type \"D\" or \"d\" to lower the robot's pen down" + System.lineSeparator() +
                 "Type \"C\" or \"c\" to print the robot details" + System.lineSeparator() +
-                "Type \"Q\" or \"q\" to quit the program" + System.lineSeparator(), outContent.toString());
+                "Type \"Q\" or \"q\" to quit the program" + System.lineSeparator() +
+                "Type \"H\" or \"h\" to quit the program"+ System.lineSeparator() , outContent.toString());
     }
 
     @Test
@@ -339,6 +340,16 @@ class RobotTest {
         assertFalse(robot.readCommand("Q"));
     }
 
+    @Test
+    void printHistoryTest() {
+        robot = new Robot();
+        assertTrue(robot.readCommand("I6"));
+        assertTrue(robot.readCommand("m5"));
+        assertTrue(robot.readCommand("H"));
+        assertEquals("1 | I6" + System.lineSeparator() +
+                     "2 | m5" + System.lineSeparator() , outContent.toString());
+
+    }
     @Test
     void readCommandUTest() {
         robot = new Robot();
@@ -375,7 +386,7 @@ class RobotTest {
     void readCommandInitWithInvalidValueTest() {
         robot = new Robot();
         assertTrue(robot.readCommand("I1"));
-        assertEquals("Invalid Size! Make sure the size is greater than 1" + System.lineSeparator(), outContent.toString());
+        assertEquals("Invalid Size! Make sure the size is greater than 1 and less than or equal to 500" + System.lineSeparator(), outContent.toString());
     }
 
     @Test

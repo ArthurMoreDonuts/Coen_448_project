@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Robot implements RobotInterface {
@@ -12,6 +13,7 @@ public class Robot implements RobotInterface {
     private enum direction {East, West, North, South}
     private enum state {Up, Down}
     private boolean isInitialized;
+    private ArrayList<String> History;
 
     public Robot (){
         grid = new int[1][1];
@@ -19,10 +21,11 @@ public class Robot implements RobotInterface {
         position = new int[2];
         pointing = direction.North;
         isInitialized = false;
+        History = new ArrayList<>();
     }
 
     public boolean initializeGrid(int size){
-        if (size <= 1)
+        if (size <= 1  || size > 500)
             return false;
         this.grid = new int[size][size];
         this.position[0] = size - 1;
@@ -32,7 +35,12 @@ public class Robot implements RobotInterface {
         this.isInitialized = true;
         return true;
     }
-     public boolean  readCommand(String command){
+    public void printHistory(){
+        for(int i = 0; i < History.size(); i++) {
+            System.out.println( i+1 + " | " + History.get(i));
+        }
+    }
+    public boolean  readCommand(String command){
         int InputValue;
         command = command.strip();//remove whitespace
         if (command.length() == 0)
@@ -42,18 +50,37 @@ public class Robot implements RobotInterface {
                 case "P", "p" -> {
                     if (isInitialized) {
                         this.printGrid();
+                        History.add(command);
                     }
                     else{
                         System.out.println("Initialize the grid first, please!");
                     }
                 }
                 case "Q", "q" -> {return false;}
-                case "U", "u" -> this.setPenUp();
-                case "D", "d" -> this.setPenDown();
-                case "R", "r" -> this.turnRight();
-                case "L", "l" -> this.turnLeft();
-                case "C", "c" -> this.printRobot();
+                case "U", "u" -> {
+                    this.setPenUp();
+                    History.add(command);
+                }
+                case "D", "d" -> {
+                    this.setPenDown();
+                    History.add(command);
+                }
+                case "R", "r" -> {
+                    this.turnRight();
+                    History.add(command);
+                }
+                case "L", "l" -> {
+                    this.turnLeft();
+                    History.add(command);
+                }
+                case "C", "c" -> {
+                    this.printRobot();
+                    History.add(command);
+                }
                 case "H", "h" -> {
+                    printHistory();
+                }
+                case "F", "f" -> {
                     System.out.println("Type \"I\" or \"i\" followed by a positive integer greater than 1 to initialize the grid");
                     System.out.println("Type \"P\" or \"p\" to print the grid, but make sure the grid is already initialized");
                     System.out.println("Type \"M\" or \"m\" followed by positive integer greater than zero to move the robot in the direction its facing, but make sure the grid is already initialized");
@@ -63,6 +90,7 @@ public class Robot implements RobotInterface {
                     System.out.println("Type \"D\" or \"d\" to lower the robot's pen down");
                     System.out.println("Type \"C\" or \"c\" to print the robot details");
                     System.out.println("Type \"Q\" or \"q\" to quit the program");
+                    System.out.println("Type \"H\" or \"h\" to quit the program");
                 }
                 default -> System.out.println("Invalid command, press h or H for help!");
             }
@@ -73,12 +101,17 @@ public class Robot implements RobotInterface {
                 switch (command.substring(0,1)) {
                     case "I", "i" -> {
                         if (!this.initializeGrid(InputValue))
-                            System.out.println("Invalid Size! Make sure the size is greater than 1");
+                            System.out.println("Invalid Size! Make sure the size is greater than 1 and less than or equal to 500");
+                        else
+                            History.add(command);
+
                     }
                     case "M", "m" -> {
                         if (isInitialized) {
                             if (!this.moveRobot(InputValue))
                                 System.out.println("Invalid move! Make sure the move is within the grid");
+                            else
+                                History.add(command);
                         }
                         else{
                             System.out.println("Initialize the grid first, please!");
